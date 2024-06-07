@@ -19,6 +19,9 @@ class FrontendController extends Controller
 
 
 
+
+
+
     public function about(){
       
         $array = [
@@ -36,3 +39,7 @@ class FrontendController extends Controller
 
  
 }
+
+
+
+// Hi Hellloooooooooooooooooooooooooooo
