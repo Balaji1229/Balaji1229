@@ -16,13 +16,11 @@ class FrontendController extends Controller
 
 
 
-<<<<<<< HEAD
 //this is my second modification
 
-=======
 
 //this is my first modification 
->>>>>>> dev
+
 
 
 
