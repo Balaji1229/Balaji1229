@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Carbon;
 
 use Dotenv\Validator;
 use Illuminate\Auth\Events\Validated;
@@ -32,16 +33,29 @@ class FrontendController extends Controller
 
 
     public function about(){
-
-        $collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
-
-        return $collection->nth(1, 4);
+      
  
-                }
+        $array = ['first' => 'james', 'last' => 'kirk'];
+        
+        $mapped = Arr::map($array, function (string $value, string $key) {
+
+            // dd($key);
+
+        return ucfirst($value);
+});
+ 
+         
+        return $mapped;
+         
+       
+      
+     
+         
+       
+ 
+     }
 
  
 }
 
 
-
-// Hi Hellloooooooooooooooooooooooooooo
