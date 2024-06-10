@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Collection;
+
+use Dotenv\Validator;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Arr;
@@ -15,6 +19,8 @@ class FrontendController extends Controller
     }
 
 
+ 
+
 
 
 
@@ -26,18 +32,11 @@ class FrontendController extends Controller
 
 
     public function about(){
-      
-        $array = [
-            'user.name' => 'Kevin Malone',
-            'user.occupation' => 'Accountant',
-        ];
-         
-        $array = Arr::undot($array);
 
-        return $array;
+        $collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
 
-
-
+        return $collection->nth(1, 4);
+ 
                 }
 
  
