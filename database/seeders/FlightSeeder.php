@@ -15,8 +15,8 @@ class FlightSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
+            'name' => 'Nandha',
+            'email' => 'nandha@example.com',
             'password' => bcrypt('password'),
         ]);
     }
