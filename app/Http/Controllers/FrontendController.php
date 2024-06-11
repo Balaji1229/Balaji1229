@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Carbon;
+use App\Models\User;
 
 use Dotenv\Validator;
 use Illuminate\Auth\Events\Validated;
@@ -22,38 +23,18 @@ class FrontendController extends Controller
 
  
 
-
-
-
-
-
-
-
-
-
-
-    public function about(){
-      
- 
-        $array = ['first' => 'james', 'last' => 'kirk'];
+    public function about() {
+        $users = User::all(); 
         
-        $mapped = Arr::map($array, function (string $value, string $key) {
-
-            // dd($key);
-
-        return ucfirst($value);
-});
- 
-         
-        return $mapped;
-         
-       
-      
-     
-         
-       
- 
-     }
+        $user_data = "";
+        
+        foreach ($users as $user) {
+            $user_data .= $user->name . "\n";
+        }
+        
+        return $user_data;
+    }
+    
 
  
 }
