@@ -12,6 +12,8 @@ use Illuminate\Pipeline\Pipeline;
 use App\Pipes\CheckTitle;
 use App\Pipes\TrimContent;
 use App\Pipes\UppercaseTitle;
+use App\Pipes\PrependHelloWorld;
+
 
 
 
@@ -61,6 +63,7 @@ class RegisterController extends Controller
                 CheckTitle::class,
                 TrimContent::class,
                 UppercaseTitle::class,
+                // PrependHelloWorld::class,
             ])
             ->thenReturn();
 
@@ -71,4 +74,35 @@ class RegisterController extends Controller
 
     }
 
-}
+
+
+    //////////////////////////////////// Lazy Loading & Eagar Loading //////////////////////////////
+
+
+    //lazy
+
+    public function post_post_one() {
+        $posts = Post::all();
+        $data = [];
+        foreach ($posts as $post) {
+        $data[] = $post->title; 
+    }
+        return $data;
+    }
+   
+
+    //Eager
+
+    public function post_post() {
+        $posts = Post::all(['title']);  
+        return $posts;
+    }
+    
+
+    
+    
+    }
+ 
+
+
+
