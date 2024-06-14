@@ -12,7 +12,7 @@ class UserRegistered extends Mailable implements ShouldQueue
     use Queueable, SerializesModels;
 
     public $user;
-
+ 
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -20,9 +20,6 @@ class UserRegistered extends Mailable implements ShouldQueue
 
     public function build()
     {
-        return $this->view('emails.user_registered')
-                    ->with([
-                        'name' => $this->user->name,
-                    ]);
+        return $this->view('emails.User_Registered')->subject('Email Confirmation')->with([ 'name' => $this->user->name, ]);
     }
 }

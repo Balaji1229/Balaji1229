@@ -3,16 +3,26 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ContactJob;
+use App\Jobs\ContacttwoJob;
+
 use App\Jobs\ProcessUserRegistration;
+use App\Mail\HelloMail;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Mail;
 
 
 use App\Models\Post;
+use App\Models\Contact;
+
 use Illuminate\Pipeline\Pipeline;
 use App\Pipes\CheckTitle;
 use App\Pipes\TrimContent;
 use App\Pipes\UppercaseTitle;
 use App\Pipes\PrependHelloWorld;
+
+
 
 
 
@@ -25,18 +35,20 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+    
     public function register(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
-
-        ProcessUserRegistration::dispatch($request->all());
-
+    
+        ProcessUserRegistration::dispatch($validatedData);
+    
         return redirect()->route('register')->with('status', 'Registration successful! Check your email for confirmation.');
     }
+    
 
 
 
@@ -99,7 +111,37 @@ class RegisterController extends Controller
     }
     
 
+//////////////////////////////////// Queus Jobs ////////////////////////////////////////////////
     
+public function contact_us(){
+    return view('contact.contact');
+}
+
+
+public function contact_data(Request $request){
+
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|string|max:20',
+        'address' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
+
+    ContactJob::dispatch($validatedData);   
+
+    return redirect()->back()->with('success', 'Your message has been submitted successfully!');
+
+
+}
+
+
+/////////////////////////////// Mail Testing //////////////////////////////////////////////////////////////// 
+
+public function mail() {
+   Mail::to('balaji.n@targetbay.com')->send(new HelloMail());
+}
+
     
     }
  
