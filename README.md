@@ -35,13 +35,7 @@ Building scalable web applications, solving real-world problems, and continuousl
 # 📊 GitHub Dashboard
 
 <p align="center">
-<img width="100%" src="https://github-readme-stats.vercel.app/api?username=Balaji1229&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img width="100%" src="https://streak-stats.demolab.com?user=Balaji1229&theme=tokyonight&hide_border=true"/>
-</p>
-
-<p align="center">
-<img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Balaji1229&layout=compact&theme=tokyonight&hide_border=true"/>
+<img width="80%" src="https://streak-stats.demolab.com?user=Balaji1229&theme=tokyonight&hide_border=true"/>
 </p>
 
 ---
