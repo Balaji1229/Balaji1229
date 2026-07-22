@@ -1,33 +1,13 @@
-# Hi 👋, I'm Balaji
+<div align="center">
 
-## 💻 About Me
+# Hi 👋 I'm Balaji
 
-- 💼 Software Developer with 4+ years of experience
-- 🚀 Backend Developer specializing in Laravel
-- 🌱 Currently learning Java & Spring Boot
-- 💡 Passionate about building scalable web applications
-- 📍 Chennai, India
+### 🚀 Laravel Backend Developer | Java Spring Boot Learner
 
----
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=00F7FF&center=true&vCenter=true&width=750&lines=Laravel+Developer;Backend+Engineer;Java+Spring+Boot+Learner;Building+Scalable+REST+APIs;Always+Learning+Something+New"/>
+</p>
 
-## 🛠️ Tech Stack
-
-- PHP
-- Laravel
-- Java
-- Spring Boot
-- MySQL
-- Git & GitHub
-- REST APIs
+</div>
 
 ---
-
-## 🚀 Current Goals
-
-- 📚 Master Spring Boot
-- ☁️ Learn Microservices
-- 🏗️ Build production-ready backend applications
-
----
-
-⭐ Thanks for visiting my profile!
